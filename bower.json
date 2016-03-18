@@ -1,0 +1,27 @@
+{
+  "name": "article-rewriter",
+  "homepage": "https://github.com/maraymer/article-rewriter",
+  "authors": [
+    "Matthew Raymer <matthew.raymer@anomalistdesign.com>"
+  ],
+  "description": "gui tool for helping writers rewrite content",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "article",
+    "rewriting",
+    "content"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^2.2.2",
+    "modernizr-min": "^3.2.0"
+  }
+}
