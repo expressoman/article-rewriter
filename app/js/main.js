@@ -1,6 +1,12 @@
 
-  var btnParse_click = function() {};
-  var btnPaste_click = function() {};
+  var btnParse_click = function() {
+  };
+
+  var btnPaste_click = function() {
+    var text = window.clipboardData.getData("text/plain");
+    console.log( text );
+    $('#existing_article').val( text );
+  };
 
   var Step01 = function() {
     var   source = $("#step-01-template").html();
