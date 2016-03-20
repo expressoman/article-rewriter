@@ -5,7 +5,7 @@
     "Matthew Raymer <matthew.raymer@anomalistdesign.com>"
   ],
   "description": "gui tool for helping writers rewrite content",
-  "main": "index.html",
+  "main": "app/index.html",
   "moduleType": [],
   "keywords": [
     "article",
