@@ -5,9 +5,7 @@
     var text = $('#existing_article').val().trim();
     var result = text.match( /[^\.!\?]+[\.!\?]+/g );
     sentences = result;
-
     Step02();
-
     return false;
   };
 
@@ -22,16 +20,17 @@
   };
 
   var Step02 = function() {
-    var   source = $("#step-01-template").html();
+    var   source = $("#step-02-template").html();
     var template = Handlebars.compile( source );
-    var count = 0;
+    var    count = 0;
     for ( var i = 0; i < sentences.length; i++ ) {
-      count += sentences.split(" ").length;
+      count += sentences[ i ].split(" ").length;
     }
     var description = "Rewrite each sentence in your own words. The original article contains " + count + " words.";
-    var  context = { title: "Rewrite Article", description: description };
-    var     html = template( context );
+    var     context = { title: "Rewrite Article", description: description, sentences : sentences };
+    var        html = template( context );
     $("#content").html( html );
+    $('#formStep02').submit( function() { return false; } );
 
     return false;
   };
