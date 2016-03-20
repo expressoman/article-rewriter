@@ -32,6 +32,8 @@
     var  context = { title: "Rewrite Article", description: description };
     var     html = template( context );
     $("#content").html( html );
+
+    return false;
   };
 
   var main_init = function() {
