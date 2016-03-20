@@ -9,17 +9,9 @@
   <title>Article Rewriter</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <style>
-    body {
-      padding-bottom: 30px;
-      padding-top: 50px;
-    }
-  </style>
-
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css">
   <link rel="stylesheet" href="css/main.css">
-
   <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
@@ -42,14 +34,14 @@
   <script id="step-01-template" type="text/template">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-lg-8">
-        <div class="page-header"><h3>Paste Article</h3></div>
-        <p class="lead">Paste an existing article in the textbox below.</p>
+        <div class="page-header"><h3>{{title}}</h3></div>
+        <p class="lead">{{description}}</p>
         <form action="">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="form-group">
                 <label>Existing Article</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <textarea id="existing_article" class="form-control" rows="10"></textarea>
               </div>
             </div>
           </div>

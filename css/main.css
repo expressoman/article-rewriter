@@ -6,27 +6,30 @@
 
 /* HELPER CLASSES */
 
-.checkbox:first-child,
-.panel-body > :first-child { margin-top: 0; }
+  .checkbox:first-child,
+  .panel-body > :first-child { margin-top: 0; }
 
-.checkbox:last-child,
-.form-group:last-child,
-.help-block:last-child,
-.panel-body > :last-child { margin-bottom: 0; }
+  .checkbox:last-child,
+  .form-group:last-child,
+  .help-block:last-child,
+  .panel-body > :last-child { margin-bottom: 0; }
 
+  /* ORDERED ITEMS */
 
+  .ordered-item {
+    padding-left: 1.5em;
+  }
 
-/* ORDERED ITEMS */
+  .ordered-item .order {
+    color: #999;
+    float: left;
+    font-weight: bold;
+    margin-left: -1.5em;
+    text-align: right;
+    width: 1em;
+  }
 
-.ordered-item {
-	padding-left: 1.5em;
-}
-
-	.ordered-item .order {
-		color: #999;
-		float: left;
-		font-weight: bold;
-		margin-left: -1.5em;
-		text-align: right;
-		width: 1em;
-	}
+  body {
+    padding-bottom: 30px;
+    padding-top: 50px;
+  }
