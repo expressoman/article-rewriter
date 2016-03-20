@@ -1,5 +1,8 @@
 
   var btnParse_click = function() {
+    var text = $('#existing_article').val().trim();
+    var result = text.match( /[^\.!\?]+[\.!\?]+/g );
+    console.log( result );
   };
 
   var Step01 = function() {
