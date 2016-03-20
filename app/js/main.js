@@ -2,12 +2,6 @@
   var btnParse_click = function() {
   };
 
-  var btnPaste_click = function() {
-    var text = window.clipboardData.getData("text/plain");
-    console.log( text );
-    $('#existing_article').val( text );
-  };
-
   var Step01 = function() {
     var   source = $("#step-01-template").html();
     var template = Handlebars.compile( source );
@@ -15,7 +9,6 @@
     var     html = template( context );
     $("#content").html( html );
 
-    $("#btnPaste").click( btnPaste_click );
     $("#btnParse").click( btnParse_click );
   };
 
