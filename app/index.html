@@ -30,6 +30,7 @@
   <script src="../bower_components/handlebars/handlebars.min.js"></script>
   <script src="../bower_components/jquery/dist/jquery.min.js"></script>
   <script src="../bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+  <script src="../bower_components/clipboard/dist/clipboard.min.js"></script>
   <script src="js/main.js"></script>
   <script id="step-01-template" type="text/template">
     <div class="row">
@@ -63,27 +64,27 @@
           <div class="panel panel-default">
             <div class="panel-heading">
               <div class="checkbox">
-                <label><input type="checkbox" value="">Begin new paragraph</label>
+                <label><input type="checkbox" {{#if paragraph}}checked="checked"{{/if}}">Begin new paragraph</label>
               </div>
             </div> 
           <div class="panel-body">
             <div class="ordered-item">
-              <div class="order">{{@index}}</div>
+              <div class="order">{{count}}</div>
                 <div class="form-group">
                   <!-- OLD SENTENCE -->
-                  <textarea class="form-control" rows="3">{{this}}</textarea>
+                  <textarea class="form-control old" rows="3">{{old}}</textarea>
                 </div>
                 <div class="form-group">
                   <!-- NEW SENTENCE -->
-                  <textarea class="form-control" rows="3">{{this}}</textarea>
+                  <textarea class="form-control new" rows="3">{{new}}</textarea>
                 </div>
               </div>
             </div>
           </div>
           {{/each}}
           <div class="form-group">
-            <input class="btn btn-default" type="button" value="Back">
-            <input class="btn btn-primary" type="submit" value="Compose Article">
+            <input id="btnBack" class="btn btn-default" type="button" value="Back">
+            <input id="btnComposeArticle" class="btn btn-primary" type="submit" value="Compose Article">
           </div>
         </form>
       </div>
@@ -92,21 +93,21 @@
   <script id="step-03-template" type="text/template">
     <div class="row">
       <div class="col-sm-12 col-md-10 col-lg-8">
-        <div class="page-header"><h3>Preview Article</h3></div>
-        <p class="lead">Your new article contains 21 words.</p>
-        <form action="">
+        <div class="page-header"><h3>{{title}}</h3></div>
+        <p class="lead">{{description}}</p>
+        <form id="formStep03" action="">
           <div class="panel panel-default">
             <div class="panel-body">
               <div class="form-group">
                 <label>New Article</label>
-                <textarea class="form-control" rows="10"></textarea>
+                <textarea id="taArticle" class="form-control" rows="10">{{article}}</textarea>
               </div> 
             </div>
           </div>
           <div class="form-group">
-            <input class="btn btn-default" type="button" value="Back">
-            <input class="btn btn-default" type="button" value="Copy to Clipboard">
-            <input class="btn btn-primary" type="submit" value="Save to File">
+            <input id="btnBack" class="btn btn-default" type="button" value="Back">
+            <button id="btnCopy" class="btn btn-default" data-clipboard-action="copy" data-clipboard-target="#taArticle">Copy to Clipboard</button>
+            <a href="" id="btnSave" download="article.txt" class="btn btn-primary">Save to File</a>
           </div>
         </form>
       </div>
